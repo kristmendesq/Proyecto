@@ -443,51 +443,61 @@ ul#adminList li button:hover {
 }
 
 #modalWhats {
-display: inline-block;
-margin-top: 1.5rem;
-background-color: #25D366;
-color: white;
-padding: 0.7rem 1.6rem;
-border-radius: 30px;
-font-weight: bold;
-text-decoration: none;
-transition: background-color 0.3s ease;
-box-shadow: 0 4px 12px rgba(37,211,102,0.3);
+  display: inline-block;
+  margin-top: 1.5rem;
+  background-color: #25D366;
+  color: white;
+  padding: 0.7rem 1.6rem;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37,211,102,0.3);
 }
 
 #modalWhats:hover {
-background-color: #1ebe57;
-box-shadow: 0 6px 18px rgba(30,190,87,0.5);
+  background-color: #1ebe57;
+  box-shadow: 0 6px 18px rgba(30,190,87,0.5);
 }
 
 footer {
-position: fixed;
-bottom: 0;
-left: 0;
-width: 100%;
-background-color: #fff;
-border-top: 1px solid #eee;
-color: #999;
-font-size: 0.95rem;
-text-align: center;
-padding: 1rem 0;
-z-index: 1000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  color: #999;
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 1rem 0;
+  z-index: 1000;
 }
 
 @media (max-width: 768px) {
-header {
-flex-direction: column;
-align-items: flex-start;
-height: auto;
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+  nav {
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .search-container-below {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
 }
-nav {
-margin-top: 0.5rem;
-flex-wrap: wrap;
-}
-.search-container-below {
-width: 100%;
-margin-left: 0;
-margin-bottom: 1rem;
-}
+
+.modal-content img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(183, 110, 121, 0.2);
 }
 
