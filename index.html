@@ -42,7 +42,7 @@
     </section>
 
     <section id="adminLogin" class="modal hidden">
-      <div class="modal-content">
+      <div class="modal-content admin-modal-content">
         <span class="close" onclick="cerrarModalAdmin()">&times;</span>
         <h2>Iniciar sesión Administrador</h2>
         <input type="text" id="adminCedula" placeholder="Cédula" />
@@ -62,7 +62,7 @@
         </select>
         <textarea id="productDescription" placeholder="Descripción del producto"></textarea>
         <input type="text" id="productPrice" placeholder="₡0.00" />
-        <input type="file" id="productImageFile" accept="image/*" />
+        <input type="file" id="productImageFile" accept="image/*" multiple />
         <button onclick="addProduct()">Agregar Producto</button>
         <ul id="adminList"></ul>
         <button onclick="logoutAdmin()">Cerrar sesión</button>
@@ -71,11 +71,11 @@
   </main>
 
   <div id="productModal" class="modal hidden">
-    <div class="modal-content">
+    <div class="modal-content product-modal-content">
       <span class="close" onclick="closeProductModal()">&times;</span>
       <div id="carouselInner" class="carousel-inner"></div>
-      <div id="modalDescription"></div>
-      <div id="recommendedProducts"></div>
+      <div id="modalDescription" class="modal-description"></div>
+      <div id="recommendedProducts" class="recommended-products"></div>
       <a id="modalWhats" href="#" target="_blank">Comprar por WhatsApp</a>
     </div>
   </div>
@@ -85,7 +85,5 @@
   </footer>
 
   <script src="JS/Admin.js"></script>
-  <input type="file" id="productImageFile" accept="image/*,video/*" multiple />
-
 </body>
 </html>
