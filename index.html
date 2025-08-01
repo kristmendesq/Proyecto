@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tienda Virtual</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <header>
+    <div class="logo-container" id="logoBtn">
+      <img src="IMG/logoprovisional.png" alt="Logo" class="logo-img" />
+      <div class="logo-text">
+        <h1 class="logo">Surtitodo</h1>
+        <p class="sub">Tu estilo, tu elección</p>
+      </div>
+    </div>
+    <nav>
+      <a href="#" onclick="mostrarSeccion('inicio')">Inicio</a>
+      <a href="#" onclick="mostrarSeccion('adminLogin')">Administrador</a>
+    </nav>
+  </header>
+
+  <div class="search-container-below">
+    <input type="text" id="searchInput" placeholder="Buscar producto..." onkeyup="buscarProducto()" autocomplete="off" />
+    <ul id="searchSuggestions" class="suggestions-list"></ul>
+  </div>
+
+  <section id="categoria" class="section-box visible">
+    <h2>Filtrar por categoría</h2>
+    <select id="categoriaSelect" onchange="filterProducts()">
+      <option value="all">Todos</option>
+      <option value="convencional">Convencional</option>
+      <option value="ortopedico">Ortopédico</option>
+    </select>
+  </section>
+
+  <main>
+    <section id="inicio" class="section-box visible">
+      <h2>Productos disponibles</h2>
+      <div class="product-list" id="productList"></div>
+    </section>
+
+    <section id="adminLogin" class="modal hidden">
+      <div class="modal-content">
+        <span class="close" onclick="cerrarModalAdmin()">&times;</span>
+        <h2>Iniciar sesión Administrador</h2>
+        <input type="text" id="adminCedula" placeholder="Cédula" />
+        <input type="text" id="adminNombre" placeholder="Nombre" />
+        <input type="password" id="adminClave" placeholder="Contraseña" />
+        <button onclick="verificarClave()">Entrar</button>
+      </div>
+    </section>
+
+    <section id="admin" class="section-box hidden">
+      <div id="adminContent">
+        <h2>Panel del Administrador</h2>
+        <input type="text" id="productName" placeholder="Nombre del producto" />
+        <select id="productCategory">
+          <option value="convencional">Convencional</option>
+          <option value="ortopedico">Ortopédico</option>
+        </select>
+        <textarea id="productDescription" placeholder="Descripción del producto"></textarea>
+        <input type="text" id="productPrice" placeholder="₡0.00" />
+        <input type="file" id="productImageFile" accept="image/*" />
+        <button onclick="addProduct()">Agregar Producto</button>
+        <ul id="adminList"></ul>
+        <button onclick="logoutAdmin()">Cerrar sesión</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="productModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close" onclick="closeProductModal()">&times;</span>
+      <div id="carouselInner" class="carousel-inner"></div>
+      <div id="modalDescription"></div>
+      <div id="recommendedProducts"></div>
+      <a id="modalWhats" href="#" target="_blank">Comprar por WhatsApp</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Tienda Virtual</p>
+  </footer>
+
+  <script src="JS/Admin.js"></script>
+  <input type="file" id="productImageFile" accept="image/*,video/*" multiple />
+
+</body>
+</html>
